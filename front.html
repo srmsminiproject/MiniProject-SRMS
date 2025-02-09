@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholarSync</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #1F0340, #711C8A);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .scene-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 500px;
+            padding: 20px;
+        }
+
+        .person {
+            position: absolute;
+            width: 300px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            overflow: hidden;
+        }
+
+        .person-left {
+            left: 10%;
+        }
+
+        .person-right {
+            right: 10%;
+        }
+
+        .book-container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 20px;
+        }
+
+        .book {
+            width: 40px;
+            height: 60px;
+            background: #FF6B6B;
+            border-radius: 5px;
+            opacity: 0;
+            animation: moveBook 2s ease-in-out infinite;
+        }
+
+        .book::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.5);
+            top: 20%;
+            left: 10%;
+            border-radius: 1px;
+        }
+
+        .book::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.5);
+            top: 40%;
+            left: 10%;
+            border-radius: 1px;
+        }
+
+        @keyframes moveBook {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        .book:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .book:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        .cta-button {
+            background: #B026FF;
+            color: white;
+            border: none;
+            padding: 16px 48px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background: #C24FFF;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(176, 38, 255, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .scene-container {
+                transform: scale(0.8);
+            }
+            
+            .person-left {
+                left: 5%;
+            }
+            
+            .person-right {
+                right: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scene-container">
+        <div class="person person-left">
+            <img src="boy.png" alt="Boy giving a book" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div class="book-container">
+            <div class="book"></div>
+        </div>
+        <div class="person person-right">
+            <img src="girl.png"Girl receiving books" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+    </div>
+    <button class="cta-button" onclick="location.href='choose.html'" >Get Started</button>
+
+    <script>
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1.05)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

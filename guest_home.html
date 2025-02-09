@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholarSync</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: radial-gradient(circle at top, #1F0340, #711C8A);
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 50px;
+        }
+
+        .logo h1 {
+            font-style: italic;
+            font-size: 24px;
+        }
+
+        /* Navigation */
+        nav {
+            margin-left: auto;
+            margin-right: 30px; /* Adds spacing between nav and login button */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 80px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .login-btn {
+            background: white;
+            color: #000000;
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 100px;
+        }
+
+        main h2 {
+            font-size: 60px;
+            font-style: italic;
+        }
+
+        main h3 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        main p {
+            font-size: 25px;
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        #tag {
+            position: absolute;
+            top: 58px;
+            left: 48px;
+        }
+        body::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80vw; /* Scale to 80% of viewport width */
+        height: 80vh; /* Scale to 80% of viewport height */
+        background-image: url('logo.png');
+        background-size: contain; /* Ensures the full image is visible */
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.15; /* Adjust for better readability */
+        transform: translate(-50%, -50%); /* Center the image */
+        z-index: -1; /* Keeps it in the background */
+        }
+
+
+
+        #ctag {
+            position: absolute;
+            top: 255px;
+            left: 565px;
+        }
+        #content {
+    margin-top: 80px; /* Adjust this value as needed */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i>ScholarSync</i></h1>
+            <p id="tag">Connect and Learn</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="guest_home.html" >Home</a></li>
+                <li><a href="#">Notes</a></li>
+                <li><a href="qanda.html">Q&A</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <button class="login-btn" onclick="location.href='login.html'" ><strong>Login</strong></button>
+
+    </header>
+
+    <main>
+        <h2><i>ScholarSync</i></h2>
+        <h3 id="ctag">Connect and Learn</h3>
+        <p id="content">Welcome to ScholarSync, your primary center for<br>information sharing, academic support, and<br>community building in the collegiate<br>environment.</p>
+    </main>
+</body>
+</html>

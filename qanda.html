@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholarSync - Q&A</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: radial-gradient(circle at top, #1F0340, #711C8A);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 50px;
+        }
+
+        .logo h1 {
+            font-style: italic;
+            font-size: 24px;
+        }
+
+        #tag {
+            position: absolute;
+            top: 58px;
+            left: 48px;
+        }
+
+        /* Navigation */
+        nav {
+            margin-left: auto;
+            margin-right: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 80px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            padding-bottom: 50px;
+        }
+
+        .search-container {
+            margin: 50px auto;
+            width: 60%;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input {
+            flex: 1;
+            padding: 12px 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            text-indent: 30px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .add-button {
+            margin-left: 10px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .add-button:hover {
+            background-color: #ffdb4d;
+        }
+
+        /* Popular Searches */
+        .popular-searches {
+            margin-top: 40px;
+        }
+
+        .qa-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .qa-card {
+            background-color: white;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Scroll option */
+        .scroll-container {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i>ScholarSync</i></h1>
+            <p id="tag">Connect and Learn</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#">Notes</a></li>
+                <li><a href="qanda.html">Q&A</a></li>
+                <li><a href="#">Study Group</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="search-container">
+            <img class="search-icon" src="search-icon.png" alt="Search">
+            <input type="search" placeholder="Search your question">
+            <button class="add-button">+Add</button>
+        </div>
+
+        <section class="popular-searches">
+            <h2>Popular Searches</h2>
+            <div class="scroll-container">
+                <div class="qa-cards">
+                    <div class="qa-card">
+                        <h3>What is the difference between Stack and Queue?</h3>
+                        <p>A stack follows LIFO order, whereas a queue follows FIFO.</p>
+                    </div>
+                    <div class="qa-card">
+                        <h3>What is Big-O notation in algorithms?</h3>
+                        <p>Big O notation describes the efficiency of an algorithm in terms of time and space complexity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
